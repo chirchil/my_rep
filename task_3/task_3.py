@@ -22,13 +22,6 @@ class Figure:
         else:
             print("Периметры фигур равны")
 
-    # Заглушки для гетров периметра и площади
-    def get_area(self):
-        pass
-
-    def get_perimeter(self):
-        pass
-
 
 # Класс прямоугольника
 class Rectangle(Figure):
