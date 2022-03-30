@@ -18,13 +18,6 @@ class Figure:
         else:
             print("Периметры фигур равны")
 
-    # Заглушки для гетров периметра и площади
-    def get_area(self):
-        pass
-
-    def get_perimeter(self):
-        pass
-
 
 # Класс прямоугольника
 class Rectangle(Figure):
@@ -82,3 +75,4 @@ obj1.print_area()
 obj2 = Rectangle(1, 2)
 obj2.print_area()
 obj1.compare_area(obj2)
+
