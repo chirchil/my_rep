@@ -2,8 +2,6 @@
 class Figure:
     # Сравнить площади
     def compare_area(self, obj: object):
-        self.get_area()
-        obj.get_area()
         if self.area > obj.area:
             print(f"Фигура '{self.name}' имеет большую площадь, чем фигура '{obj.name}'")
         elif self.area < obj.area:
@@ -13,8 +11,6 @@ class Figure:
 
     # Сравнить периметры
     def compare_perimeter(self, obj: object):
-        self.get_perimeter()
-        obj.get_perimeter()
         if self.perimeter > obj.perimeter:
             print(f"Фигура '{self.name}' имеет больший периметр, чем фигура '{obj.name}'")
         elif self.perimeter < obj.perimeter:
@@ -37,15 +33,15 @@ class Rectangle(Figure):
         self.a = a
         self.b = b
         self.name = name
+        self.area = self.a * self.b
+        self.perimeter = 2 * (self.a + self.b)
 
     # Получить площадь
-    def get_area(self):
-        self.area = self.a * self.b
+    def print_area(self):
         print(f"Площадь фигуры с именем '{self.name}' равна {self.area}")
 
     # Получить периметр
-    def get_perimeter(self):
-        self.perimeter = 2 * (self.a + self.b)
+    def print_perimeter(self):
         print(f"Периметр фигуры с именем '{self.name}' равен {self.perimeter}")
 
 
@@ -56,6 +52,8 @@ class Square(Rectangle):
         self.a = a
         self.b = a
         self.name = name
+        self.area = self.a * self.b
+        self.perimeter = 2 * (self.a + self.b)
 
 
 # Класс треугольника, наследуемый от фигуры
@@ -66,19 +64,21 @@ class Triangle(Figure):
         self.b = b
         self.c = c
         self.name = name
+        p = (self.a + self.b + self.c)/2
+        self.area = (p * (p - self.a) * (p - self.b) * (p - self.c))**1/2
+        self.perimeter = self.a + self.b + self.c
 
     # Получить периметр
-    def get_perimeter(self):
-        self.perimeter = self.a + self.b + self.c
+    def print_perimeter(self):
         print(f"Периметр фигуры с именем '{self.name}' равен {self.perimeter}")
 
     # Получить площадь
-    def get_area(self):
-        p = (self.a + self.b + self.c)/2
-        self.area = (p * (p - self.a) * (p - self.b) * (p - self.c))**1/2
+    def print_area(self):
         print(f"Площадь фигуры с именем '{self.name}' равна {self.area}")
 
 
 obj1 = Triangle(3, 2, 2)
+obj1.print_area()
 obj2 = Rectangle(1, 2)
+obj2.print_area()
 obj1.compare_area(obj2)

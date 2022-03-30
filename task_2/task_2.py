@@ -3,8 +3,8 @@ import sys
 
 
 # Кастомный фильтр
-def custom_filter(func: Callable, list_str: List[str]) -> List[str]:
-    custom_list = list(filter(func, list_str))
+def custom_filter(filter_func: Callable, list_of_str : List[str]) -> List[str]:
+    custom_list = list(filter(filter_func, list_of_str ))
     print(f"The new list of strings is: {custom_list}")
     return custom_list
 
