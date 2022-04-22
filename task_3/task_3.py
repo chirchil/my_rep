@@ -2,21 +2,11 @@
 class Figure:
     # Сравнить площади
     def compare_area(self, obj: object):
-        if self.area > obj.area:
-            print(f"Фигура '{self.name}' имеет большую площадь, чем фигура '{obj.name}'")
-        elif self.area < obj.area:
-            print(f"Фигура '{self.name}' имеет меньшую площадь, чем фигура '{obj.name}'")
-        else:
-            print("Площади фигур равны")
+        return True if self.area > obj.area else False
 
     # Сравнить периметры
     def compare_perimeter(self, obj: object):
-        if self.perimeter > obj.perimeter:
-            print(f"Фигура '{self.name}' имеет больший периметр, чем фигура '{obj.name}'")
-        elif self.perimeter < obj.perimeter:
-            print(f"Фигура '{self.name}' имеет меньший периметр, чем фигура '{obj.name}'")
-        else:
-            print("Периметры фигур равны")
+        return True if self.perimeter > obj.perimeter else False
 
 
 # Класс прямоугольника
@@ -74,5 +64,5 @@ obj1 = Triangle(3, 2, 2)
 obj1.print_area()
 obj2 = Rectangle(1, 2)
 obj2.print_area()
-obj1.compare_area(obj2)
+print(obj1.compare_area(obj2))
 

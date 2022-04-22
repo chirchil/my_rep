@@ -1,7 +1,9 @@
 # Класс студента
 class Student():
-    grant_for_5 = 6000
-    grant_for_4 = 4000
+    excelent_mark = 5
+    good_mark = 4
+    grant_for_excelent = 6000
+    grant_for_good = 4000
     # Инициализация
     def __init__(self, name: str, surname: str, patronymic: str, age: int, group_num: str, gpa: float):
         self.name = name
@@ -18,10 +20,10 @@ class Student():
 
     # Посчитать значение стипендии
     def calculate_grant(self):
-        if self.gpa == 5:
-            self.grant = self.__class__.grant_for_5
-        elif 4 <= self.gpa < 5:
-            self.grant = self.__class__.grant_for_4
+        if self.gpa == self.__class__.excelent_mark:
+            self.grant = self.__class__.grant_for_excelent
+        elif self.__class__.good_mark <= self.gpa < self.__class__.excelent_mark:
+            self.grant = self.__class__.grant_for_good
         else:
             self.grant = 0
     
@@ -41,8 +43,8 @@ class Student():
 
 # Класс магистра
 class Graduate(Student):
-    grant_for_5 = 8000
-    grant_for_4 = 6000
+    grant_for_excelent = 8000
+    grant_for_good = 6000
     # Инициализация
     def __init__(self, name: str, surname: str, patronymic: str, age: int, group_num: str, gpa: float, work: str):
         self.name = name
