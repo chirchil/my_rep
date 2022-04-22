@@ -19,14 +19,6 @@ class Rectangle(Figure):
         self.area = self.a * self.b
         self.perimeter = 2 * (self.a + self.b)
 
-    # Получить площадь
-    def print_area(self):
-        print(f"Площадь фигуры с именем '{self.name}' равна {self.area}")
-
-    # Получить периметр
-    def print_perimeter(self):
-        print(f"Периметр фигуры с именем '{self.name}' равен {self.perimeter}")
-
 
 # Класс Квадрата, наследуемый от прямоугольника
 class Square(Rectangle):
